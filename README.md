@@ -21,8 +21,10 @@ a 3am intervention, and the error is the owner's behaviour, not the bread.
 node main.ts
 ```
 
-Writes the entry to `entry.txt` (and to `/output/entry.txt` when that directory
-is available, as the grader expects). Deterministic, no network.
+Writes the entry to `$MAKEFUN_OUTPUT_DIR/entry.txt` (the grader sets that
+to `/output`; locally it falls back to `out/entry.txt`). Deterministic,
+no network. It never writes to the working directory — the grader's cwd
+is read-only.
 
 ## License
 
